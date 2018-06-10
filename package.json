@@ -1,0 +1,30 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "nu-html-checker *.html",
+    "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build:sass": "sass --sourcemap=none --update sass:css",
+    "build:autoprefixer": "autoprefixer-cli style/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriannan/project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriannan/project/issues"
+  },
+  "homepage": "https://github.com/adriannan/project#readme",
+  "dependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.24.4",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^4.0.0"
+  }
+}
