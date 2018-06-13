@@ -12,22 +12,24 @@ body{
 *{
 	box-sizing: border-box;
 }
-header{
+.header {
 	width: 80%;
-	margin: 10% auto;
+	margin: 5% auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
-header h1{
+.header h1{
 	text-align: center;
 }
-header button{
+.header button{
 	width:33%;
-	border-radius: 300px;
 	padding: 15px 45px;
 	margin: 30px auto;
+}
+.btn{
+	border-radius: 300px;
 	text-transform: uppercase;
 	background-color: transparent;
 	color: #fff;
@@ -35,13 +37,62 @@ header button{
     border-color: #fff;
 	cursor: pointer;
 }
-header button:hover{
+
+
+.header button:hover{
 	background-color: #fff;
 	/*border-color: #cc0066;*/
 	box-shadow: 0px 0px 3px 1px #fff;
 	color: #cc0066;
 	font-weight: 400;
 	transition: transform .1s ease-in-out, color .1s ease-in-out, background-color .1s ease-in-out, box-shadow .1s ease-in-out;
+}
+.container{
+	width: 80%;
+	margin: 5% auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.container .badge {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+	margin: 30px;
+	width: 15%;
+	cursor: pointer;	
+}
+.container .badge:hover{
+	transform: scale(1.1);
+	transition: transform .1s ease-in-out;
+	/*border-radius: 100%;*/
+	/*box-shadow: 0px 0px 20px .5px #fff ;*/
+}
+
+.container .btn {
+	/*width:33%;*/
+	padding: 8px 15px;
+	margin: 15px auto;
+}
+.container .far{
+	font-size: 3em;
+	font-weight: 400;
+}
+
+
+
+
+.pickElem{
+	background-color: #fff;
+	/*border-color: #cc0066;*/
+	box-shadow: 0px 0px 3px 1px #fff;
+	color: #cc0066;
+	font-weight: 400;
+	transition: transform .1s ease-in-out, color .1s ease-in-out, background-color .1s ease-in-out, box-shadow .1s ease-in-out;
+
 }
 
 
