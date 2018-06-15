@@ -1,42 +1,3 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Rock Paper Scissors</title>
-	<link rel="stylesheet" type="text/css" href="style/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Muli:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-</head>
-<body>
-	<div class="header">
-		<h1>Rock Paper Scissors</h1>
-		<button id="newGame" class="btn">New Game</button>
-	</div>
-	<div id="playerPickElement" class="container">
-		<span class="badge" id="playerPickRock">
-			<i class="far fa-hand-rock" aria-hidden="true"></i>
-			<button id="btn" class="btn">
-			Rock
-			</button>
-		</span>	
-		<span class="badge">
-			<i class="far fa-hand-paper"></i>
-			<button id="playerPickPaper" class="btn">
-				Paper
-			</button>
-		</span>
-		<span class="badge">
-			<i class="far fa-hand-scissors"></i>
-			<button id="playerPickScissors" class="btn">
-				Scissors
-			</button>
-		</span>
-	</div>
-
-<script type="text/javascript" src="rpsGame.js"></script>
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +32,43 @@
 			</button>
 		</span>
 	</div>
+	<div id="resultElement" class="container resultContainer">
+		<div class="row players">
+			<div class="player">
+				<span id="playerPoints" class="points">0</span>
+				<span id="playerName" class="">Player Name</span>
+			</div>
+			<span>vs</span>
+			<div class="player">
+				<span class="">Computer</span>
+				<span id="computerPoints" class="points">0</span>
+			</div>
+		</div>
+		<div class="row picks">
+			<span id="playerPick" class="pick">playerPick</span>
+			<span id="computerPick" class="pick">computerPick</span>
+		</div>
+		<div class="row">
+			<span id="result">
+				Score
+			</span>
+		</div>
+	</div>
+
+
+
+
 
 <script type="text/javascript" src="rpsGame.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

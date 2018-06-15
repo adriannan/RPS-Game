@@ -95,6 +95,39 @@ body{
 
 }
 
+.resultContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .row{
+	width: 80%;
+	margin: 10px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+.container .player, .container .pick{
+	width: 30%;
+	margin: auto;
+	text-align: center;
+	font-size: 18px;
+}
+#result, .points{
+	margin: 15px auto;
+	height: 10px;
+	font-size: 22px;
+}
+.points{
+	border: 1px solid #fff;
+	border-radius: 25%;
+	padding: 2px 10px;
+	margin: 10px;
+}
+
 
 
 @media screen and (max-width: 750px) {

@@ -20,8 +20,6 @@
 // 	});
 // }
 
-
-
 var newGameBtn = document.getElementById("newGame");
 var playerPickRock = document.getElementById("playerPickRock")
 var playerPickPaper = document.getElementById("playerPickPaper")
@@ -44,11 +42,24 @@ playerPickPaper.addEventListener('mouseenter', function() {
 });
 playerPickPaper.addEventListener('mouseleave', function() {
 		btnPaper.classList.remove ("pickElem");
-})
-;playerPickScissors.addEventListener('mouseenter', function() {
+});
+playerPickScissors.addEventListener('mouseenter', function() {
 		btnScissors.classList.add ("pickElem");
 });
 playerPickScissors.addEventListener('mouseleave', function() {
 		btnScissors.classList.remove ("pickElem");
 });
+
+playerPickRock.addEventListener('click', function(){playerPick('rock')});
+playerPickPaper.addEventListener('click', function(){playerPick('paper')});
+playerPickScissors.addEventListener('click', function(){playerPick('scissors')});
+
+
+
+
+
+
+
+
+
 
