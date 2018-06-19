@@ -2,19 +2,22 @@ body{
 	background-color: #282935;
 	margin: 0;
 	color: white;
-	font-family: 'Lato', sans-serif;
+	font-family: 'Muli', sans-serif;
 	max-width: 1200px;
 	background: linear-gradient(to bottom right, #e82c64 10%, #9939a0 110%);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
+    background-size: 100%;
+    background-origin: content-box;
+
 }
 *{
 	box-sizing: border-box;
 }
-header{
+.header {
 	width: 80%;
-	margin: 10% auto;
+	margin: 5% auto;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: column;
@@ -24,14 +27,16 @@ header{
 	-ms-flex-align: center;
 	    align-items: center;
 }
-header h1{
+.header h1{
 	text-align: center;
 }
-header button{
+.header button{
 	width:33%;
-	border-radius: 300px;
 	padding: 15px 45px;
 	margin: 30px auto;
+}
+.btn{
+	border-radius: 300px;
 	text-transform: uppercase;
 	background-color: transparent;
 	color: #fff;
@@ -39,13 +44,114 @@ header button{
     border-color: #fff;
 	cursor: pointer;
 }
-header button:hover{
+
+
+.header button:hover{
 	background-color: #fff;
 	/*border-color: #cc0066;*/
-	box-shadow: 0px 0px 2px 1px #fff;
+	box-shadow: 0px 0px 3px 1px #fff;
 	color: #cc0066;
 	font-weight: 400;
-	transition: color .1s ease-in-out, background-color .1s ease-in-out, box-shadow .1s ease-in-out;
+	transition: transform .1s ease-in-out, color .1s ease-in-out, background-color .1s ease-in-out, box-shadow .1s ease-in-out;
+}
+.header button:checked{
+	border: none;
+}
+.container{
+	width: 80%;
+	margin: 5% auto;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: center;
+	    align-items: center;
+}
+.container .badge {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: center;
+	    align-items: center;
+	padding-top: 10px;
+	margin: 30px;
+	width: 15%;
+	cursor: pointer;	
+}
+.container .badge:hover{
+	transform: scale(1.1);
+	transition: transform .1s ease-in-out;
+	/*border-radius: 100%;*/
+	/*box-shadow: 0px 0px 20px .5px #fff ;*/
+}
+
+.container .btn {
+	/*width:33%;*/
+	padding: 8px 15px;
+	margin: 15px auto;
+}
+.container .far{
+	font-size: 3em;
+	font-weight: 400;
+}
+
+
+
+
+.pickElem{
+	background-color: #fff;
+	/*border-color: #cc0066;*/
+	box-shadow: 0px 0px 3px 1px #fff;
+	color: #cc0066;
+	font-weight: 400;
+	transition: transform .1s ease-in-out, color .1s ease-in-out, background-color .1s ease-in-out, box-shadow .1s ease-in-out;
+
+}
+
+.resultContainer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	-ms-flex-align: center;
+	    align-items: center;
+}
+
+.container .row{
+	width: 80%;
+	margin: 10px auto;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: row;
+	    flex-direction: row;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-ms-flex-align: center;
+	    align-items: center;
+}
+.container .player, .container .pick{
+	width: 30%;
+	margin: auto;
+	text-align: center;
+	font-size: 18px;
+}
+#result, .points{
+	margin: 15px auto;
+	height: 10px;
+	font-size: 22px;
+}
+.points{
+	border: 1px solid #fff;
+	border-radius: 25%;
+	padding: 2px 10px;
+	margin: 10px;
 }
 
 
