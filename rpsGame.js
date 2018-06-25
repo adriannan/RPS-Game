@@ -1,25 +1,3 @@
-// var newGameBtn = document.getElementById("newGame");
-// var playerPickRock = document.getElementById("playerPickRock")
-// var badge = document.querySelectorAll(".badge");
-// var btnn = document.getElementById("btn");
-
-// newGameBtn.addEventListener('click', newGame);
-
-// // playerPickRock.addEventListener('mouseover', function() {
-// // 	.btn
-// // });
-
-
-
-// for(i=0; i<badge.length; i++){
-// 	badge[i].addEventListener("mousedown", function(){
-// 		btnn.classList.add ("pickElem");
-// 	});
-// 	badge[i].addEventListener("mouseup", function(){
-// 		btnn.classList.remove ("pickElem");
-// 	});
-// }
-
 var newGameBtn = document.getElementById("newGame"),
 	pickElem = document.getElementById("playerPickElement"),
 	resultsElem = document.getElementById("resultsElement");
@@ -39,6 +17,7 @@ var gameState = 'notStarted', //started //ended
 	computer = {
 		score: 0
 	};
+
 var playerPoints = document.getElementById("playerPoints"),
 	playerName = document.getElementById("playerName"),
 	computerPoints = document.getElementById("computerPoints");
@@ -73,21 +52,6 @@ playerPickPaper.addEventListener('click', function(){playerPick('paper')});
 playerPickScissors.addEventListener('click', function(){playerPick('scissors')});
 
 
-// function setGameElements(){
-// 	if(gameState=='started'){
-// 		newGameBtn.display = 'none';
-// 		pickElem.display = 'flex';
-// 		resultsElem.display = 'flex'
-// 	} else if(gameState=='ended'){
-// 		newGameBtn.innerText = 'Try again';
-// 	} else if(gameState=='notStarted') {
-// 		newGameBtn.display = 'block';
-// 		pickElem.display = 'none';
-// 		resultsElem.display = 'none'
-
-// 	}
-// }
-
 function setGameElements(){
 	switch(gameState){
 		case 'started':
@@ -96,13 +60,17 @@ function setGameElements(){
 				resultsElem.style.display = 'flex';
 			break;
 		case 'ended':
+				newGameBtn.style.display = 'block';
 				newGameBtn.innerText = 'Play again';
-			break;
 		case 'notStarted':
 		default:
 			newGameBtn.style.display = 'block';
 			pickElem.style.display = 'none';
 			resultsElem.style.display = 'none'
+			result.classList.remove ("winner");
+			result.innerHTML = 'Let\'s play!';
+			playerPickElem.innerHTML = '';
+			computerPickElem.innerHTML = '';	
 	}
 }
 
@@ -113,7 +81,7 @@ function newGame(){
 		gameState = 'started';
 		setGameElements();
 		playerName.innerHTML = player.name;
-		//setGamePoints(); // function hasn't been created yet
+		setGamePoints();
 	}
 }
 
@@ -123,6 +91,7 @@ function playerPick(playerPick){
 	playerPickElem.innerHTML = playerPick;
 	computerPickElem.innerHTML = computerPick;
 
+	checkRoundWinner(playerPick, computerPick);
 }
 
 function getComputerPick(){
@@ -130,12 +99,54 @@ function getComputerPick(){
 	return possiblePicks[Math.floor(Math.random()*3)];
 }
 
+function checkRoundWinner(playerPick, computerPick){
+	result.innerHTML = '';
+	var winnerIs = 'player';
+
+	if (playerPick == computerPick){
+		winnerIs = 'none'; // remis
+		result.innerHTML = 'Draw!';
+	} else if(
+		(computerPick == 'rock' && playerPick == 'scissors') ||
+		(computerPick == 'scissors' && playerPick == 'paper') ||
+		(computerPick == 'paper' && playerPick == 'rock')){
+		winnerIs = 'computer';
+	} ;
+
+	if (winnerIs == 'player'){
+		result.innerHTML = player.name + ' win!';
+		player.score++;
+	} else if (winnerIs == 'computer'){
+		result.innerHTML = 'Computer win!';
+		computer.score++;
+	} 
+	setGamePoints();
+	setGameElements();
+	checkWinner();
+}
+
+function setGamePoints(){
+	playerPoints.innerHTML = player.score;
+	computerPoints.innerHTML = computer.score;
+}
+
+function checkWinner(){
+	if(player.score === 5){
+		result.innerHTML = player.name + ' win the game!!!';
+		result.classList.add ("winner");
+		gameState = 'ended';
+		setTimeout(function(){alert(player.name + ' win the game!!!')},300);
+		setTimeout(setGameElements,500);
 
 
-
-
-
-
+	} else if(computer.score === 5){
+		result.innerHTML = 'Computer win the game!!!';
+		result.classList.add ("winner");
+		gameState = 'ended';
+		setTimeout(function(){alert('Computer win the game!!!')},300)
+		setTimeout(setGameElements,500);
+}
+}
 
 
 
