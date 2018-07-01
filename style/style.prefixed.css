@@ -1,10 +1,11 @@
 body{
 	background-color: #282935;
-	margin: 0;
+	margin: 0 auto;
 	color: white;
 	font-family: 'Muli', sans-serif;
-	max-width: 1200px;
 	background: linear-gradient(to bottom right, #e82c64 10%, #9939a0 110%);
+	/*background: linear-gradient(to bottom right, #E82C82 17%, #08112B 123%);*/
+	/*background: linear-gradient(to top left, #08111A 13%, #2dcad5 82%);*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center; 
@@ -91,7 +92,6 @@ body{
 }
 
 .container .btn {
-	/*width:33%;*/
 	padding: 8px 15px;
 	margin: 15px auto;
 }
@@ -110,7 +110,11 @@ body{
 	color: #cc0066;
 	font-weight: 400;
 	transition: transform .1s ease-in-out, color .1s ease-in-out, background-color .1s ease-in-out, box-shadow .1s ease-in-out;
-
+}
+.winner{
+	text-shadow: 0px 0px 1px white;
+	transform: scale(1.5);
+	transition: text-shadow 0.2s ease-in-out, transform .2s ease-in-out;
 }
 
 .resultContainer {
@@ -137,7 +141,7 @@ body{
 	    align-items: center;
 }
 .container .player, .container .pick{
-	width: 30%;
+	width: auto;
 	margin: auto;
 	text-align: center;
 	font-size: 18px;
@@ -155,11 +159,125 @@ body{
 }
 
 
+@media screen and (min-width: 1200px) {
+	.header {
+		width: 90%;
+	}
+	.header h1{
+		font-size: 2.3em; 
+	}
+	.header h2{
+		font-size: 1.8em; 
+	}
+	.container {
+		width: 90%;
+	}
+	.header button {
+		width: 35%;
+		padding: 20px 50px;
+		margin: 35px auto;
+	}
+	.container .far {
+		font-size: 3.6em;
+	}
+	.container .btn {
+		padding: 15px 30px;
+		margin: 20px auto;
+	}
+	.container .player, .container .pick{
+		font-size: 20px;
+	}
+	#result{
+		font-size: 26px;
+		margin: 30px auto; 
+	}
+	.points{
+		padding: 2px 10px;
+		margin: 10px;
+	}
+}
 
-@media screen and (max-width: 750px) {
-	
+@media screen and (max-width: 768px) {
+	.container{
+		width: 90%;
+	}
+	.container .player, .container .pick{
+		width: auto;
+		font-size: 16px;
+	}
+	.players span{
+		font-size: 14px;
+	}
+	.header h1, h2{
+		margin: 3px auto;
+
+	}
+	.header button {
+		width: 45%;
+	}
+	.resultContainer .picks{
+		width: 80%;
+	}	.resultContainer .picks .pick{
+		width: 40%;
+	}
 
 }
+@media screen and (max-width: 480px) {
+	.container, .container .row{
+		width: 100%;
+		margin: 5% auto;
+	}
+	.container .far{
+		font-size: 2em;
+		padding-right: 10px;
+	}
+	.container .badge{
+		padding-top: 5px;
+    	margin: 5px;
+    	width: 45%;
+    	-ms-flex-direction: row;
+    	    flex-direction: row; 
+	}
+
+	#playerPickElement{
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-direction: column;
+		    flex-direction: column;
+	}
+	.container .player, .container .pick{
+		font-size: 14px;
+	}
+	.players span{
+		font-size: 12px;
+	}
+	.row .player {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-direction: column;
+		    flex-direction: column;
+	}
+	#computerPoints{
+		-ms-flex-order: -1;
+		    order: -1;
+	}
+	.points {
+    height: auto;
+    margin: 10px auto;
+	}
+	.header button {
+		width: 40%;
+		padding: 10px 15px;
+		margin: 15px auto;
+	}
+	.header h1{
+		font-size: 1.5em; 
+	}
+	.header h2{
+		font-size: 1em; 
+	}
+}
+
 
 
 
